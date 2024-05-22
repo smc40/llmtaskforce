@@ -36,7 +36,8 @@ def get_initial_chatbot_messages() -> List[dict]:
 def set_page_config(st):
     st.set_page_config(page_title='LLM Taskforce',
                        page_icon="ℹ️",
-                       layout='wide')
+                       # layout='wide',
+                       )
 
 
 def update_chat(messages: List[dict], role: str, content: str) -> List[dict]:
