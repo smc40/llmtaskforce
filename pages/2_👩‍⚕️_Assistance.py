@@ -1,6 +1,6 @@
-from hashlib import sha256
 import os
 
+import bcrypt
 from dotenv import load_dotenv
 import streamlit as st
 
@@ -20,7 +20,7 @@ if 'azure_openai_endpoint' not in st.session_state:
 
 
 def _registration_is_valid(passwd: str):
-    return sha256(passwd.encode()).hexdigest() == os.getenv('SHOW_KEYS_PASSWD')
+    return bcrypt.checkpw(passwd.encode(), os.getenv('PASSWD').encode())
 
 
 def _do_registration():
@@ -30,8 +30,11 @@ def _do_registration():
         st.success('You have successfully authenticated!')
         st.session_state['azure_openai_api_key'] = os.getenv("AZURE_OPENAI_API_KEY", default='<CHANGEME>')
         st.session_state['azure_openai_endpoint'] = os.getenv("AZURE_OPENAI_ENDPOINT", default='<CHANGEME>')
+    else:
+        st.error('Authentication failed')
 
 
+st.markdown('# 👩‍⚕️ Some Assistance...')
 st.markdown('### API Keys')
 
 st.markdown('Environment variables')
@@ -41,11 +44,12 @@ if not st.session_state['registration']:
 
 if st.session_state['registration']:
     code = f"""# Azure OpenAI Variables
-export AZURE_OPENAI_API_KEY={st.session_state['azure_openai_api_key']}
-export AZURE_OPENAI_ENDPOINT={st.session_state['azure_openai_endpoint']}
+AZURE_OPENAI_API_KEY={st.session_state['azure_openai_api_key']}
+AZURE_OPENAI_ENDPOINT={st.session_state['azure_openai_endpoint']}
 """
     st.code(code, language='bash')
 
+st.markdown('<br><br>', unsafe_allow_html=True)
 st.markdown('### Python Example')
 st.text('Install openai package')
 st.code('pip install openai', language='bash')
