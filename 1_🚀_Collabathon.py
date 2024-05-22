@@ -48,6 +48,9 @@ st.markdown(learn, unsafe_allow_html=True)
 st.markdown(home, unsafe_allow_html=True)
 
 st.markdown('<br><br><br>', unsafe_allow_html=True)
+st.markdown('## Schedule')
+st.image('resources/schedule.png', use_column_width=True)
+
 text = """<hr><p style="font-weight: bold; font-size: 25px">🍲 ROAST MY LLM</p>
 <p style="font-size: 20px">Let's expose those LLM weaknesses like hallucinations, inconsistencies, biases, prompt injection etc.</p>
 <p>Pitched by: Christoph</p>
@@ -62,10 +65,6 @@ medical dictionary (e.g. MedDRA, ICD-10, ICD-11)</p>
 <p>Pitched by: Dennis</p>
 <hr>
 """
-st.markdown('<br>', unsafe_allow_html=True)
+st.markdown('<br><br><br>', unsafe_allow_html=True)
 st.markdown('## Use Cases')
 st.markdown(text, unsafe_allow_html=True)
-
-st.markdown('<br><br><br>', unsafe_allow_html=True)
-st.markdown('## Schedule')
-st.image('resources/schedule.png', use_column_width=True)
