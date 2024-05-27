@@ -35,6 +35,7 @@ def _do_registration():
 
 
 st.markdown('# 👩‍⚕️ Some Assistance...')
+st.markdown('Azure OpenAI Service documentation can be found [here](https://learn.microsoft.com/en-us/azure/ai-services/openai/chatgpt-quickstart?tabs=command-line%2Cpython-new&pivots=programming-language-python)')
 st.markdown('### API Keys')
 
 st.markdown('Environment variables')
