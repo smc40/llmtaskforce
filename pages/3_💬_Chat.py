@@ -11,7 +11,7 @@ if 'messages' not in st.session_state:
 st.markdown("# 💬 Chit-Chat...")
 col1, col2 = st.columns([1, 2])
 with col1:
-    model = st.selectbox('Model', options=['gpt-35-turbo', 'gpt-4'])
+    model = st.selectbox('Model', options=['gpt-4', 'gpt-35-turbo'])
     if st.button('clear'):
         st.session_state['messages'] = utl.get_initial_chatbot_messages()
 
