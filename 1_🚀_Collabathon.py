@@ -54,15 +54,18 @@ st.image('resources/schedule.png', use_column_width=True)
 text = """<hr><p style="font-weight: bold; font-size: 25px">🍲 ROAST MY LLM</p>
 <p style="font-size: 20px">Let's expose those LLM weaknesses like hallucinations, inconsistencies, biases, prompt injection etc.</p>
 <p>Pitched by: Christoph</p>
+<a href="https://miro.com/app/board/uXjVK_yjqMk=/">Miro Board</a>
 <hr>
 <p style="font-weight: bold; font-size: 25px">🧪 BENCHMARK YOUR LLM</p>
 <p style="font-size: 20px">Let's create and put LLMs to the test.</p>
 <p>Pitched by: Dominic</p>
+<a href="https://miro.com/app/board/uXjVK_zLd2k=/">Miro Board</a>
 <hr>
 <p style="font-weight: bold; font-size: 25px">👾 STANDARDIZED NER</p>
 <p style="font-size: 20px">Automate the labelling of reported reactions with a standardized 
 medical dictionary (e.g. MedDRA, ICD-10, ICD-11)</p>
 <p>Pitched by: Dennis</p>
+<a href="https://miro.com/app/board/uXjVK_y0XVs=/">Miro Board</a>
 <hr>
 """
 st.markdown('<br><br><br>', unsafe_allow_html=True)
